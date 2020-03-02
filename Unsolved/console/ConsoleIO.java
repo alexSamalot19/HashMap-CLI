@@ -45,12 +45,20 @@ public class ConsoleIO {
                 userValidation.put("last", userInput.nextLine());
             }
 
-            for (String field : userValidation.keySet()){
-                if(userValidation.get(field).equals("N")){
-                    System.out.println("Please enter your " + field + " name");
+            // Wrap this in a while loop  for the condition that the whole userValidation has at least one "N"
+            while(userValidation.containsValue("N")){
+            for (String field : userValidation.keySet()) {
+                if (userValidation.get(field).equals("N")) {
+                    System.out.println("Please reenter your " + field + " name");
+                    user.put(field, userInput.nextLine());
+                    // Then add the condition to remove the "N" from the validation
+                    System.out.printf("%s is your %s (Y/N)? \n", user.get(field), field);
+                    if(userInput.hasNextLine()) {
+                        userValidation.put(field, userInput.nextLine());
+                    }
                 }
             }
-
+            }
             // Establishing the condition for creating a new user
             System.out.println("Great, would you like to make another user (Y/N)?");
             if(userInput.hasNextLine()){
