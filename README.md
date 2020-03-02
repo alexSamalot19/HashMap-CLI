@@ -1,7 +1,5 @@
 # Hashmap CLI Practice
 
-In this activity we will further build upon the previous ConsoleIO example with Hashmaps, ArrayLists, and conditional logic.
-
 ## Practice Assignment
 
 Using the data obtained from CLI, create a Hashmap that contains the name of the data, and the users answer, example:
